@@ -1,6 +1,14 @@
 package ece.course.pedometer;
 
 
+
+//EESM 5060 LAB ASSIGNMENT 1
+//BY MIN TIANHAO && HUANG JIAXI
+
+
+
+
+
 import android.content.Context;
         import android.hardware.Sensor;
         import android.hardware.SensorEvent;
