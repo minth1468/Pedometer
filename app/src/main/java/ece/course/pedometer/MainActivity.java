@@ -1,5 +1,14 @@
 package ece.course.pedometer;
 
+
+
+//EESM 5060 LAB ASSIGNMENT 1
+//BY MIN TIANHAO && HUANG JIAXI
+
+
+
+
+
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,6 +19,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private PowerManager mPowerManager;
     private PowerManager.WakeLock mWakeLock;
+
 
 
     @SuppressLint("HandlerLeak")
@@ -99,8 +111,31 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
+                Button btnClear =(Button) findViewById(R.id.btnClear);
+                btnClear.setOnClickListener(new View.OnClickListener() {//onclicklistener
+                    public void onClick(View view) {
+                        mWalkCnt = 0;
+                        TextView tvValueWC = (TextView) findViewById(R.id.tvValueWC);
+                        tvValueWC.setText("" + mWalkCnt);
+                        mJmpCnt = 0;
+                        TextView tvValueJC = (TextView) findViewById(R.id.tvValueJC);
+                        tvValueJC.setText("" + mJmpCnt);
+                    }
+
+
+                });
+
+
+
+
             }
+
+
+
         });
+
+
+
     }
 
     public synchronized void onResume() {
